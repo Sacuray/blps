@@ -1,12 +1,12 @@
-package main.java.com.example.Entities;
+package com.example.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.CreationTimestamp;
-import main.java.com.example.Enums.EngineTypeEnum;
-import main.java.com.example.Enums.WheelTypeEnum;
+import com.example.Enums.EngineTypeEnum;
+import com.example.Enums.WheelTypeEnum;
 
 @Getter
 @Setter

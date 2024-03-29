@@ -1,4 +1,4 @@
-package main.java.com.example.Enums;
+package com.example.Enums;
 
 public enum EngineTypeEnum {
     DIESEL,
