@@ -17,5 +17,6 @@ CREATE TABLE car (
     engine engineType,
     engineVolume FLOAT,
     mileage BIGINT,
-    accident BOOLEAN
+    accident BOOLEAN,
+    price BIGINT
 );

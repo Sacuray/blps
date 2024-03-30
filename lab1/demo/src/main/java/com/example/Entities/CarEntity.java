@@ -24,19 +24,22 @@ public class CarEntity {
     private Long adNumber;
     @Column(name = "year_of_release", columnDefinition = "DATE", nullable = false)
     private LocalDate year_of_release;
-    @Enumerated(EnumType.STRING)
     @Column(name = "colour")
     private String colour;
+    @Enumerated(EnumType.STRING)
     @ColumnTransformer(write = "?::wheelType")
     @Column(name = "wheel", columnDefinition = "wheelType", nullable = false)
     private WheelTypeEnum wheel;
+    @Enumerated(EnumType.STRING)
     @ColumnTransformer(write = "?::engineType")
     @Column(name = "engine", columnDefinition = "engineType", nullable = false)
-    private WheelTypeEnum engine;
+    private EngineTypeEnum engine;
     @Column(name = "engineVolume")
     private Float engineVolume;
     @Column(name = "mileage")
     private Long mileage;
     @Column(name = "accident")
     private Boolean accident;
+    @Column(name = "price")
+    private Long price;
 }
