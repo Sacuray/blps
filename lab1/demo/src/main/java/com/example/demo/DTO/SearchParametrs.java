@@ -1,14 +1,8 @@
 package com.example.demo.DTO;
 
-import java.time.LocalDate;
-
-import org.apache.catalina.Engine;
-import org.hibernate.annotations.ColumnTransformer;
-
 import com.example.demo.Enums.EngineTypeEnum;
 import com.example.demo.Enums.WheelTypeEnum;
 
-import jakarta.persistence.Enumerated;
 import lombok.*;
 
 
@@ -18,15 +12,17 @@ import lombok.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 
+@Data
 public class SearchParametrs {
 
 
     private String model;
-    private String colour;
-    private WheelTypeEnum wheel;
-    private EngineTypeEnum engine;
+    private String color;
+    private String wheel;
+    private String engine;
     private Boolean accident;
-
-    private String sortParamName;
-    private Boolean isAsc;
+    private Long minPrice;
+    private Long maxPrice;
+    private String sorting;
+    private Boolean asc;
 }

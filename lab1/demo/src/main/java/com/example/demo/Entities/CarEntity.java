@@ -27,12 +27,10 @@ public class CarEntity {
     @Column(name = "colour")
     private String colour;
     @Enumerated(EnumType.STRING)
-    @ColumnTransformer(write = "?::wheelType")
-    @Column(name = "wheel", columnDefinition = "wheelType", nullable = false)
+    @Column(name = "wheel", nullable = false)
     private WheelTypeEnum wheel;
     @Enumerated(EnumType.STRING)
-    @ColumnTransformer(write = "?::engineType")
-    @Column(name = "engine", columnDefinition = "engineType", nullable = false)
+    @Column(name = "engine", nullable = false)
     private EngineTypeEnum engine;
     @Column(name = "enginevolume")
     private Float engineVolume;

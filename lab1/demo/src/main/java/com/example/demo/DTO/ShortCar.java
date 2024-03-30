@@ -9,6 +9,7 @@ import lombok.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class ShortCar {
     private Long adNumber;
     private String model;

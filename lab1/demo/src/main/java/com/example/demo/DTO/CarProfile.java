@@ -2,13 +2,10 @@ package com.example.demo.DTO;
 
 import java.time.LocalDate;
 
-import org.apache.catalina.Engine;
-import org.hibernate.annotations.ColumnTransformer;
 
 import com.example.demo.Enums.EngineTypeEnum;
 import com.example.demo.Enums.WheelTypeEnum;
 
-import jakarta.persistence.Enumerated;
 import lombok.*;
 
 
