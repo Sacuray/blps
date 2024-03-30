@@ -1,4 +1,4 @@
-package com.example.Controllers;
+package com.example.demo.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.DTO.CarProfile;
-import com.example.Services.CarProfileService;
+import com.example.demo.DTO.CarProfile;
+import com.example.demo.Services.CarProfileService;
 
 @RestController
 @RequestMapping("/carprofile")
@@ -32,5 +32,9 @@ public class CarProfileController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Произошла ошибка во время выполнения запроса");
         }
+    }
+    @GetMapping("/")
+    public ResponseEntity lol() {
+        return ResponseEntity.ok("data");
     }
 }

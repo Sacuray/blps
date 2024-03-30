@@ -1,12 +1,12 @@
-package com.example.Entities;
+package com.example.demo.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.CreationTimestamp;
-import com.example.Enums.EngineTypeEnum;
-import com.example.Enums.WheelTypeEnum;
+import com.example.demo.Enums.EngineTypeEnum;
+import com.example.demo.Enums.WheelTypeEnum;
 
 @Getter
 @Setter
@@ -20,9 +20,9 @@ public class CarEntity {
     private Integer id;
     @Column(name="model")
     private String model;
-    @Column(name="adNumber", nullable = false, unique = true)
+    @Column(name="adnumber", nullable = false, unique = true)
     private Long adNumber;
-    @Column(name = "year_of_release", columnDefinition = "DATE", nullable = false)
+    @Column(name = "yearofrelease", columnDefinition = "DATE", nullable = false)
     private LocalDate year_of_release;
     @Column(name = "colour")
     private String colour;
@@ -34,7 +34,7 @@ public class CarEntity {
     @ColumnTransformer(write = "?::engineType")
     @Column(name = "engine", columnDefinition = "engineType", nullable = false)
     private EngineTypeEnum engine;
-    @Column(name = "engineVolume")
+    @Column(name = "enginevolume")
     private Float engineVolume;
     @Column(name = "mileage")
     private Long mileage;

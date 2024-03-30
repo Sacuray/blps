@@ -1,9 +1,9 @@
-package com.example.Repos;
+package com.example.demo.Repos;
 
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.Entities.CarEntity;
+import com.example.demo.Entities.CarEntity;
 import java.util.List;
 
 

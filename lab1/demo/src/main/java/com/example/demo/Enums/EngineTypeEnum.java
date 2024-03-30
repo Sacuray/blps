@@ -1,4 +1,4 @@
-package com.example.Enums;
+package com.example.demo.Enums;
 
 public enum EngineTypeEnum {
     DIESEL,

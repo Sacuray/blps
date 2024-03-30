@@ -1,11 +1,11 @@
-package com.example.Services;
+package com.example.demo.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.DTO.CarProfile;
-import com.example.Entities.CarEntity;
-import com.example.Repos.CarRepo;
+import com.example.demo.DTO.CarProfile;
+import com.example.demo.Entities.CarEntity;
+import com.example.demo.Repos.CarRepo;
 
 @Service
 public class CarProfileService {
