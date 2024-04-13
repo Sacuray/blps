@@ -17,8 +17,9 @@ import lombok.*;
 
 public class CarProfile {
 
-
+    private String brand;
     private String model;
+    
     private Long adNumber;
     private LocalDate year_of_release;
     private String colour;

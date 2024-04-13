@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS car CASCADE;
 
 CREATE TABLE car (
     id serial PRIMARY KEY,
+    brand VARCHAR(64) NOT NULL,
     model VARCHAR(64) NOT NULL,
     adNumber BIGINT NOT NULL UNIQUE ,
     yearOfRelease date NOT NULL,

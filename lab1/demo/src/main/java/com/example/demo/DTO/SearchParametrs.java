@@ -15,8 +15,9 @@ import lombok.*;
 @Data
 public class SearchParametrs {
 
-
+    private String brand;
     private String model;
+    
     private String color;
     private String wheel;
     private String engine;

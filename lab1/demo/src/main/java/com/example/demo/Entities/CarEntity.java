@@ -18,6 +18,8 @@ public class CarEntity {
     @Id
     @Column(name="id", columnDefinition = "serial")
     private Integer id;
+    @Column(name="brand")
+    private String brand;
     @Column(name="model")
     private String model;
     @Column(name="adnumber", nullable = false, unique = true)

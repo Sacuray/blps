@@ -11,7 +11,7 @@ import com.example.demo.DTO.CarProfile;
 import com.example.demo.DTO.SearchParametrs;
 import com.example.demo.Entities.CarEntity;
 import com.example.demo.Repos.CarRepo;
-import com.example.demo.Repos.Search;
+
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -39,6 +39,10 @@ public class SearchService {
 
         List<Predicate> predicates = new ArrayList<>();
 
+
+        if (dto.getBrand() != null) {
+            predicates.add(cb.like(car.get("brand"), "%" + dto.getBrand() + "%"));
+        }
         if (dto.getModel() != null) {
             predicates.add(cb.like(car.get("model"), "%" + dto.getModel() + "%"));
         }
@@ -79,7 +83,7 @@ public class SearchService {
             List<CarEntity> cars = search(searchParametrs);
             System.out.println(cars.toString());
             for (CarEntity carEntity : cars) {
-                ShortCar shortCarTemp = new ShortCar(carEntity.getAdNumber(), carEntity.getModel(), carEntity.getPrice(), carEntity.getYear_of_release(), carEntity.getMileage());
+                ShortCar shortCarTemp = new ShortCar(carEntity.getAdNumber(), carEntity.getBrand(), carEntity.getModel(), carEntity.getPrice(), carEntity.getYear_of_release(), carEntity.getMileage());
                 shortCars.add(shortCarTemp);
             }
             return shortCars;

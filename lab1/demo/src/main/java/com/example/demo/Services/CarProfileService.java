@@ -16,7 +16,7 @@ public class CarProfileService {
         try {
             CarEntity car = carRepo.findByAdNumber(adNumber);
             if (car != null)
-                return new CarProfile(car.getModel(), car.getAdNumber(), car.getYear_of_release(), car.getColour(), car.getWheel(), car.getEngine(), car.getEngineVolume(), car.getMileage(), car.getAccident(), car.getPrice());
+                return new CarProfile(car.getBrand(), car.getModel(), car.getAdNumber(), car.getYear_of_release(), car.getColour(), car.getWheel(), car.getEngine(), car.getEngineVolume(), car.getMileage(), car.getAccident(), car.getPrice());
             else
                 return null;
         } catch (Exception e) {
