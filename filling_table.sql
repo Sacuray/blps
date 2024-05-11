@@ -52,18 +52,18 @@ INSERT INTO car (brand, model, adNumber, yearOfRelease, colour, wheel, engine, e
     ('Volkswagen', 'Atlas', 6789012350, '2024-03-03', 'Red', 'LEFT', 'DIESEL', 0, 250, TRUE, 4800000),
     ('Toyota', 'Land Cruiser', 7890123461, '2025-04-04', 'Blue', 'RIGHT', 'DIESEL', 0, 100, TRUE, 4900000);
 
-INSERT INTO User (user_id, username, email, password, phone_number, registration_date) VALUES 
+INSERT INTO user (user_id, username, email, password, phone_number, registration_date) VALUES
     (1, 'user1', 'user1@example.com', 'password1', '123456789', '2024-05-11'),
     (2, 'admin1', 'admin1@example.com', 'adminpassword', '987654321', '2024-05-11'),
     (3, 'superadmin1', 'superadmin1@example.com', 'superadminpassword', '555555555', '2024-05-11');
 
-INSERT INTO Admin (user_id) VALUES 
+INSERT INTO admin (user_id) VALUES
     (2);
 
-INSERT INTO Superadmin (user_id) VALUES 
+INSERT INTO superadmin (user_id) VALUES
     (3);
 
-INSERT INTO UserCar (user_id, car_id) VALUES
+INSERT INTO user_car (user_id, car_id) VALUES
     (1, 1),
     (1, 2),
     (2, 3),

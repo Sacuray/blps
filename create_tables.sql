@@ -42,7 +42,7 @@ CREATE TABLE superadmin (
 );
 
 -- Создание таблицы UserCar
-CREATE TABLE UserCar (
+CREATE TABLE user_car (
     user_car_id SERIAL PRIMARY KEY,
     user_id INT,
     car_id INT,
