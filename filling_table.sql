@@ -1,4 +1,4 @@
-INSERT INTO car (brand, model, adNumber, yearOfRelease, colour, wheel, engine, engineVolume, mileage, accident, price) VALUES
+INSERT INTO mycar (brand, model, adNumber, yearOfRelease, colour, wheel, engine, engineVolume, mileage, accident, price) VALUES
     ('Toyota', 'Camry', 1234567890, '2018-01-01', 'Red', 'LEFT', 'PETROL', 2.5, 50000, FALSE, 2500000),
     ('Honda', 'Civic', 2345678901, '2019-02-02', 'Blue', 'RIGHT', 'PETROL', 1.8, 40000, FALSE, 2000000),
     ('Ford', 'Mustang', 3456789012, '2020-03-03', 'Black', 'LEFT', 'PETROL', 5.0, 30000, FALSE, 3500000),
@@ -52,18 +52,18 @@ INSERT INTO car (brand, model, adNumber, yearOfRelease, colour, wheel, engine, e
     ('Volkswagen', 'Atlas', 6789012350, '2024-03-03', 'Red', 'LEFT', 'DIESEL', 0, 250, TRUE, 4800000),
     ('Toyota', 'Land Cruiser', 7890123461, '2025-04-04', 'Blue', 'RIGHT', 'DIESEL', 0, 100, TRUE, 4900000);
 
-INSERT INTO user (user_id, username, email, password, phone_number, registration_date) VALUES
+INSERT INTO myuser (user_id, username, email, password, phone_number, registration_date) VALUES
     (1, 'user1', 'user1@example.com', 'password1', '123456789', '2024-05-11'),
     (2, 'admin1', 'admin1@example.com', 'adminpassword', '987654321', '2024-05-11'),
     (3, 'superadmin1', 'superadmin1@example.com', 'superadminpassword', '555555555', '2024-05-11');
 
-INSERT INTO admin (user_id) VALUES
+INSERT INTO myadmin (user_id) VALUES
     (2);
 
-INSERT INTO superadmin (user_id) VALUES
+INSERT INTO mysuperadmin (user_id) VALUES
     (3);
 
-INSERT INTO user_car (user_id, car_id) VALUES
+INSERT INTO myusercar (user_id, car_id) VALUES
     (1, 1),
     (1, 2),
     (2, 3),

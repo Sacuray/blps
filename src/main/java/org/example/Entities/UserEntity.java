@@ -13,10 +13,10 @@ import org.example.Enums.WheelTypeEnum;
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "myuser")
 public class UserEntity {
     @Id
-    @Column(name="userId", columnDefinition = "serial")
+    @Column(name="user_id", columnDefinition = "serial")
     private Integer user_id;
     @Column(name="username", unique = true)
     private String username;
