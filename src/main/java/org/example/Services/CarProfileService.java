@@ -2,15 +2,24 @@ package org.example.Services;
 
 import org.example.DTO.CarProfile;
 import org.example.Entities.CarEntity;
+import org.example.Entities.UserCarEntity;
+import org.example.Entities.UserEntity;
 import org.example.Repos.CarRepo;
+import org.example.Repos.UserCarRepo;
+import org.example.Repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
 public class CarProfileService {
     @Autowired
     private CarRepo carRepo;
+    @Autowired
+    private UserRepo userRepo;
+    @Autowired
+    private UserCarRepo userCarRepo;
 
     public CarProfile carProfile(Long adNumber) {
         try {
@@ -22,5 +31,12 @@ public class CarProfileService {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    //TODO давай думать, что это просто костяк, ибо я хуй знает как нормально реализацию прописать
+    @Transactional
+    public void addCarWithOwnership(UserEntity userEntity, CarEntity carEntity) {
+        UserCarEntity userCarEntity = userCarRepo.addUserCar(userEntity, carEntity);
+        userCarRepo.save(userCarEntity);
     }
 }
