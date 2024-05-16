@@ -3,8 +3,7 @@ package org.example.Entities;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
-import org.hibernate.annotations.ColumnTransformer;
-import org.hibernate.annotations.CreationTimestamp;
+
 import org.example.Enums.EngineTypeEnum;
 import org.example.Enums.WheelTypeEnum;
 
@@ -25,7 +24,7 @@ public class CarEntity {
     @Column(name="adnumber", nullable = false, unique = true)
     private Long adNumber;
     @Column(name = "yearofrelease", columnDefinition = "DATE", nullable = false)
-    private LocalDate year_of_release;
+    private LocalDate yearOfRelease;
     @Column(name = "colour")
     private String colour;
     @Enumerated(EnumType.STRING)

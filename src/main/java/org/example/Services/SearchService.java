@@ -75,7 +75,7 @@ public class SearchService {
             List<CarEntity> cars = search(searchParametrs);
             System.out.println(cars.toString());
             for (CarEntity carEntity : cars) {
-                ShortCar shortCarTemp = new ShortCar(carEntity.getAdNumber(), carEntity.getModel(), carEntity.getPrice(), carEntity.getYear_of_release(), carEntity.getMileage());
+                ShortCar shortCarTemp = new ShortCar(carEntity.getAdNumber(), carEntity.getModel(), carEntity.getPrice(), carEntity.getYearOfRelease(), carEntity.getMileage());
                 shortCars.add(shortCarTemp);
             }
             return shortCars;

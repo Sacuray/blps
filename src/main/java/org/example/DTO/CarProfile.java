@@ -20,7 +20,7 @@ public class CarProfile {
 
     private String model;
     private Long adNumber;
-    private LocalDate year_of_release;
+    private LocalDate yearOfRelease;
     private String colour;
     private WheelTypeEnum wheel;
     private EngineTypeEnum engine;

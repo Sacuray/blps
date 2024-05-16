@@ -22,33 +22,33 @@ CREATE TABLE mycar (
 
 -- Создание таблицы User
 CREATE TABLE myuser (
-    user_id SERIAL PRIMARY KEY,
+    userId SERIAL PRIMARY KEY,
     username VARCHAR(100) UNIQUE,
     email VARCHAR(100) UNIQUE,
     password VARCHAR(100),
-    phone_number VARCHAR(20),
-    registration_date DATE,
+    phoneNumber VARCHAR(20),
+    registrationDate DATE,
     vallet BIGINT
 );
 
 -- Создание таблицы Admin
 CREATE TABLE myadmin (
-    admin_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE REFERENCES myuser(user_id)
+    adminId SERIAL PRIMARY KEY,
+    userId INT UNIQUE REFERENCES myuser(userId)
 );
 
 -- Создание таблицы Superadmin
 CREATE TABLE mysuperadmin (
-    superadmin_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE REFERENCES myuser(user_id)
+    superAdminId SERIAL PRIMARY KEY,
+    userId INT UNIQUE REFERENCES myuser(userId)
 );
 
 -- Создание таблицы UserCar
 CREATE TABLE myusercar (
-    user_car_id SERIAL PRIMARY KEY,
-    user_id INT,
-    car_id INT,
+    userCarId SERIAL PRIMARY KEY,
+    userId INT,
+    carId INT,
     status VARCHAR(25),
-    FOREIGN KEY (user_id) REFERENCES myuser(user_id),
-    FOREIGN KEY (car_id) REFERENCES mycar(id)
+    FOREIGN KEY (userId) REFERENCES myuser(userId),
+    FOREIGN KEY (carId) REFERENCES mycar(id)
 );

@@ -17,13 +17,12 @@ import lombok.ToString;
 @Table(name = "myusercar")
 public class UserCarEntity {
     @Id
-    @Column(name="user_car_id", columnDefinition = "serial")
-    private Integer user_car_id;
-    @Column(name="user_id")
-    private Integer user_id;
-    @Column(name="car_id")
-    private Integer car_id;
-
+    @Column(name="usercarid", columnDefinition = "serial")
+    private Integer userCarId;
+    @Column(name="userid")
+    private Integer userId;
+    @Column(name="carid")
+    private Integer carId;
     @Column(name="status")
     private String status;
 }

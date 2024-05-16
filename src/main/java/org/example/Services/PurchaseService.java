@@ -8,7 +8,6 @@ import org.example.Repos.UserCarRepo;
 import org.example.Repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PurchaseService {
@@ -29,11 +28,11 @@ public class PurchaseService {
     public void purchaseCar(Long userId, Long carId) {
         UserEntity user = userRepo.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
         CarEntity car = carRepo.findById(carId).orElseThrow(() -> new RuntimeException("Car not found"));
-        userCarRepo.deleteByCar_id(carId);
+        userCarRepo.deleteByCarId(carId);
 
         UserCarEntity userCar = new UserCarEntity();
-        userCar.setCar_id(car.getId());
-        userCar.setUser_id(user.getUser_id());
+        userCar.setCarId(car.getId());
+        userCar.setUserId(user.getUserId());
         userCarRepo.saveAndFlush(userCar);
     }
 }
