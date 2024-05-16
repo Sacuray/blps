@@ -18,9 +18,9 @@ import lombok.ToString;
 public class UserCarEntity {
     @Id
     @Column(name="user_car_id", columnDefinition = "serial")
-    private Long user_car_id;
+    private Integer user_car_id;
     @Column(name="user_id")
-    private Long user_id;
+    private Integer user_id;
     @Column(name="car_id")
-    private Long car_id;
+    private Integer car_id;
 }

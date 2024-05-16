@@ -33,10 +33,12 @@ public class CarProfileService {
         }
     }
 
-    //TODO давай думать, что это просто костяк, ибо я хуй знает как нормально реализацию прописать
-    @Transactional
+
+
     public void addCarWithOwnership(UserEntity userEntity, CarEntity carEntity) {
-        UserCarEntity userCarEntity = userCarRepo.addUserCar(userEntity, carEntity);
-        userCarRepo.save(userCarEntity);
+        UserCarEntity userCar = new UserCarEntity();
+        userCar.setCar_id(carEntity.getId());
+        userCar.setUser_id(userEntity.getUser_id());
+        userCarRepo.save(userCar);
     }
 }

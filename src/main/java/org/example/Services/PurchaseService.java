@@ -25,12 +25,15 @@ public class PurchaseService {
         this.userCarRepo = userCarRepo;
     }
 
-    @Transactional
+
     public void purchaseCar(Long userId, Long carId) {
         UserEntity user = userRepo.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
         CarEntity car = carRepo.findById(carId).orElseThrow(() -> new RuntimeException("Car not found"));
-        //TODO реализациию addOwner надо сделать, либо спринг и так дохуя умный
-        UserCarEntity userCar = userCarRepo.addUserCar(user, car);
+
+
+        UserCarEntity userCar = new UserCarEntity();
+        userCar.setCar_id(car.getId());
+        userCar.setUser_id(user.getUser_id());
         userCarRepo.save(userCar);
     }
 }

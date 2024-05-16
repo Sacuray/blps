@@ -20,6 +20,7 @@ public class CarProfileController {
 
 
     @GetMapping("/{adNumber}")
+    @CrossOrigin
     public ResponseEntity getProfileInfo(@PathVariable Long adNumber) {
         try {
             CarProfile data = carProfileService.carProfile(adNumber);
