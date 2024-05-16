@@ -23,4 +23,7 @@ public class UserCarEntity {
     private Integer user_id;
     @Column(name="car_id")
     private Integer car_id;
+
+    @Column(name="status")
+    private String status;
 }

@@ -6,5 +6,5 @@ import org.example.Entities.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserCarRepo extends JpaRepository<UserCarEntity, Long> {
-
+    void deleteByCar_id(Long car_id);
 }

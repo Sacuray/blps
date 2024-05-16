@@ -63,8 +63,8 @@ INSERT INTO myadmin (user_id) VALUES
 INSERT INTO mysuperadmin (user_id) VALUES
     (3);
 
-INSERT INTO myusercar (user_id, car_id) VALUES
-    (1, 1),
-    (1, 2),
-    (2, 3),
-    (3, 4);
+INSERT INTO myusercar (user_id, car_id, status) VALUES
+    (1, 1, 'active'),
+    (1, 2, 'active'),
+    (2, 3, 'active'),
+    (3, 4, 'active');

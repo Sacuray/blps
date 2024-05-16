@@ -27,7 +27,8 @@ CREATE TABLE myuser (
     email VARCHAR(100) UNIQUE,
     password VARCHAR(100),
     phone_number VARCHAR(20),
-    registration_date DATE
+    registration_date DATE,
+    vallet BIGINT
 );
 
 -- Создание таблицы Admin
@@ -47,6 +48,7 @@ CREATE TABLE myusercar (
     user_car_id SERIAL PRIMARY KEY,
     user_id INT,
     car_id INT,
+    status VARCHAR(25),
     FOREIGN KEY (user_id) REFERENCES myuser(user_id),
     FOREIGN KEY (car_id) REFERENCES mycar(id)
 );
