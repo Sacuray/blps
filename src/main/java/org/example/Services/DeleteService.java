@@ -14,7 +14,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 
 @Service
-public class PurchaseService {
+public class DeleteService {
     @Autowired
     private final CarRepo carRepo;
     @Autowired
@@ -24,7 +24,7 @@ public class PurchaseService {
 
     private final TransactionTemplate transactionTemplate;
 
-    public PurchaseService(CarRepo carRepo, UserRepo userRepo, UserCarRepo userCarRepo, PlatformTransactionManager transactionManager) {
+    public DeleteService(CarRepo carRepo, UserRepo userRepo, UserCarRepo userCarRepo, PlatformTransactionManager transactionManager) {
         this.carRepo = carRepo;
         this.userRepo = userRepo;
         this.userCarRepo = userCarRepo;
@@ -32,30 +32,20 @@ public class PurchaseService {
     }
 
 
-    public boolean purchaseCar(String username, Long adNumber) {
+    public boolean delete(Long adNumber) {
         return transactionTemplate.execute(status -> {
-            UserEntity user = userRepo.getByUsername(username);
             CarEntity car = carRepo.findByAdNumber(adNumber);
             UserCarEntity old = userCarRepo.findByCarId(car.getId());
-            UserEntity userOld = userRepo.findById(old.getUserId()).orElseThrow(() -> new RuntimeException("UserOld not found"));
 
-            if (user.getWallet() < car.getPrice()) {
+            if(car == null || old == null) {
                 return false;
             }
-
-            userOld.setWallet(userOld.getWallet() + car.getPrice());
-            user.setWallet(user.getWallet() - car.getPrice());
-            userCarRepo.deleteByCarId(car.getId());
-
-            UserCarEntity userCar = new UserCarEntity();
-            userCar.setCarId(car.getId());
-            userCar.setUserId(user.getUserId());
-            userRepo.saveAndFlush(userOld);
-            userRepo.saveAndFlush(user);
-            userCarRepo.saveAndFlush(userCar);
+            UserEntity user = userRepo.getById(old.getUserId());
+            userCarRepo.delete(old);
+            carRepo.delete(car);
             MQTTSender mqttSender = new MQTTSender();
             try {
-                mqttSender.publish("purchase:" + userOld.getUsername());
+                mqttSender.publish("delete:" + user.getUsername());
             } catch (MqttException e) {
                 throw new RuntimeException(e);
             }

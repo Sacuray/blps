@@ -14,5 +14,4 @@ public class UserRegistration {
     private String email;
     private String password;
     private String phoneNumber;
-    private LocalDate registrationDate;
 }

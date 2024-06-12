@@ -10,6 +10,7 @@ import java.util.List;
 public interface CarRepo extends JpaRepository<CarEntity, Long> {
     CarEntity findById(Integer id);
     CarEntity findByAdNumber(Long adNumber);
+    CarEntity findFirstByOrderByPriceAsc();
 }
 
 

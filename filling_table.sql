@@ -52,19 +52,15 @@ INSERT INTO mycar (brand, model, adNumber, yearOfRelease, colour, wheel, engine,
     ('Volkswagen', 'Atlas', 6789012350, '2024-03-03', 'Red', 'LEFT', 'DIESEL', 0, 250, TRUE, 4800000),
     ('Toyota', 'Land Cruiser', 7890123461, '2025-04-04', 'Blue', 'RIGHT', 'DIESEL', 0, 100, TRUE, 4900000);
 
-INSERT INTO myuser (userId, username, email, password, phoneNumber, registrationDate) VALUES
-    (1, 'user1', 'user1@example.com', 'password1', '123456789', '2024-05-11'),
-    (2, 'admin1', 'admin1@example.com', 'adminpassword', '987654321', '2024-05-11'),
-    (3, 'superadmin1', 'superadmin1@example.com', 'superadminpassword', '555555555', '2024-05-11');
+INSERT INTO myuser (userId, username, email, password, phoneNumber, registrationDate, role, wallet) VALUES
+    (10000, 'user1', 'user1@example.com', 'password1', '123456789', '2024-05-11', 'ROLE_USER', 300000000000000),
+    (20000, 'admin1', 'admin1@example.com', 'adminpassword', '987654321', '2024-05-11', 'ROLE_USER', 300000000000000),
+    (30000, 'superadmin1', 'superadmin1@example.com', 'superadminpassword', '555555555', '2024-05-11', 'ROLE_USER', 300000000000000);
 
-INSERT INTO myadmin (userId) VALUES
-    (2);
 
-INSERT INTO mysuperadmin (userId) VALUES
-    (3);
 
 INSERT INTO myusercar (userId, carId, status) VALUES
-    (1, 1, 'active'),
-    (1, 2, 'active'),
-    (2, 3, 'active'),
-    (3, 4, 'active');
+    (10000, 1, 'active'),
+    (20000, 2, 'active'),
+    (20000, 3, 'active'),
+    (20000, 4, 'active');

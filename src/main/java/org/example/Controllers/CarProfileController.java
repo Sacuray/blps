@@ -2,6 +2,7 @@ package org.example.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ public class CarProfileController {
     @Autowired
     CarProfileService carProfileService;
 
-
+//    @PreAuthorize("isAuthenticated()")
     @GetMapping("/{adNumber}")
     @CrossOrigin
     public ResponseEntity getProfileInfo(@PathVariable Long adNumber) {
@@ -34,6 +35,7 @@ public class CarProfileController {
             return ResponseEntity.badRequest().body("Произошла ошибка во время выполнения запроса");
         }
     }
+    @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/")
     public ResponseEntity lol() {
         return ResponseEntity.ok("data");

@@ -16,7 +16,7 @@ import org.example.Enums.WheelTypeEnum;
 public class CarEntity {
     @Id
     @Column(name="id", columnDefinition = "serial")
-    private Integer id;
+    private Long id;
     @Column(name="brand")
     private String brand;
     @Column(name="model")

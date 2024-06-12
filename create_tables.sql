@@ -28,26 +28,17 @@ CREATE TABLE myuser (
     password VARCHAR(100),
     phoneNumber VARCHAR(20),
     registrationDate DATE,
-    vallet BIGINT
+    wallet BIGINT,
+    role Varchar(25)
 );
 
--- Создание таблицы Admin
-CREATE TABLE myadmin (
-    adminId SERIAL PRIMARY KEY,
-    userId INT UNIQUE REFERENCES myuser(userId)
-);
 
--- Создание таблицы Superadmin
-CREATE TABLE mysuperadmin (
-    superAdminId SERIAL PRIMARY KEY,
-    userId INT UNIQUE REFERENCES myuser(userId)
-);
 
 -- Создание таблицы UserCar
 CREATE TABLE myusercar (
     userCarId SERIAL PRIMARY KEY,
-    userId INT,
-    carId INT,
+    userId BIGINT,
+    carId BIGINT,
     status VARCHAR(25),
     FOREIGN KEY (userId) REFERENCES myuser(userId),
     FOREIGN KEY (carId) REFERENCES mycar(id)
